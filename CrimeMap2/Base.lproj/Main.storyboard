@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,29 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-yU-nbm">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-yU-nbm">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Rockford Crime Map" id="rtn-ZU-rfY"/>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KVw-dt-OHO">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KVw-dt-OHO">
                                 <rect key="frame" x="0.0" y="72" width="375" height="528"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last 24 Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG5-ON-k6j">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 24 Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG5-ON-k6j">
                                 <rect key="frame" x="0.0" y="608" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUG-Rx-tcX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUG-Rx-tcX">
                                 <rect key="frame" x="312" y="610" width="47" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="cPX-G5-hY6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-ah-ftE">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-ah-ftE">
                                 <rect key="frame" x="-2" y="629" width="379" height="31"/>
                                 <connections>
                                     <action selector="DateSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="PC0-E4-kPH"/>
@@ -53,15 +56,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="leading" secondItem="cyP-yU-nbm" secondAttribute="leading" id="KBQ-bx-WhN"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="leading" secondItem="KVw-dt-OHO" secondAttribute="leading" id="OMR-8i-IRd"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XAC-nt-hFa"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ZYA-O9-3r2"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="trailing" secondItem="cyP-yU-nbm" secondAttribute="trailing" id="aup-NJ-DyQ"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="trailing" secondItem="KVw-dt-OHO" secondAttribute="trailing" id="igU-or-igm"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="leading" secondItem="pG5-ON-k6j" secondAttribute="leading" id="jfC-f0-Ygx"/>
-                            <constraint firstAttribute="trailing" secondItem="GWC-ah-ftE" secondAttribute="trailing" id="pHZ-Yk-irr"/>
-                            <constraint firstItem="GWC-ah-ftE" firstAttribute="top" secondItem="KVw-dt-OHO" secondAttribute="bottom" constant="26" id="tV6-nV-QeS"/>
+                            <constraint firstItem="pG5-ON-k6j" firstAttribute="leading" secondItem="GWC-ah-ftE" secondAttribute="leading" id="3UQ-TZ-STO"/>
+                            <constraint firstItem="pG5-ON-k6j" firstAttribute="top" secondItem="KVw-dt-OHO" secondAttribute="bottom" constant="8" symbolic="YES" id="4NY-uU-qfE"/>
+                            <constraint firstItem="tUG-Rx-tcX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9C0-tJ-abn"/>
+                            <constraint firstItem="GWC-ah-ftE" firstAttribute="top" secondItem="tUG-Rx-tcX" secondAttribute="bottom" constant="2" id="CQS-Cp-MmW"/>
+                            <constraint firstItem="cyP-yU-nbm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="D04-eX-qCa"/>
+                            <constraint firstItem="cyP-yU-nbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FMf-bT-WMJ"/>
+                            <constraint firstAttribute="trailing" secondItem="cyP-yU-nbm" secondAttribute="trailing" id="HvO-9g-pCf"/>
+                            <constraint firstItem="pG5-ON-k6j" firstAttribute="centerY" secondItem="tUG-Rx-tcX" secondAttribute="centerY" id="LDb-a3-RFr"/>
+                            <constraint firstItem="cyP-yU-nbm" firstAttribute="trailing" secondItem="KVw-dt-OHO" secondAttribute="trailing" id="Uh8-E4-mOF"/>
+                            <constraint firstItem="KVw-dt-OHO" firstAttribute="trailing" secondItem="GWC-ah-ftE" secondAttribute="trailing" id="bzZ-6W-630"/>
+                            <constraint firstItem="KVw-dt-OHO" firstAttribute="top" secondItem="cyP-yU-nbm" secondAttribute="bottom" id="c5w-Ov-i4c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GWC-ah-ftE" secondAttribute="bottom" constant="8" symbolic="YES" id="ldt-1X-Nxi"/>
+                            <constraint firstItem="cyP-yU-nbm" firstAttribute="leading" secondItem="KVw-dt-OHO" secondAttribute="leading" id="lnE-Ua-4EN"/>
+                            <constraint firstItem="KVw-dt-OHO" firstAttribute="leading" secondItem="pG5-ON-k6j" secondAttribute="leading" id="syY-HW-1lk"/>
                         </constraints>
                     </view>
                     <connections>
